@@ -1,0 +1,362 @@
+Collecting vllm==0.19.1
+  Downloading vllm-0.19.1-cp38-abi3-manylinux_2_31_x86_64.whl.metadata (10 kB)
+Requirement already satisfied: regex in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (2026.5.9)
+Requirement already satisfied: cachetools in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (7.1.1)
+Requirement already satisfied: psutil in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (7.2.2)
+Requirement already satisfied: sentencepiece in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (0.2.1)
+Requirement already satisfied: numpy in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (2.2.6)
+Requirement already satisfied: requests>=2.26.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (2.33.1)
+Requirement already satisfied: tqdm in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (4.67.3)
+Requirement already satisfied: blake3 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (1.0.8)
+Requirement already satisfied: py-cpuinfo in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (9.0.0)
+Requirement already satisfied: transformers!=5.0.*,!=5.1.*,!=5.2.*,!=5.3.*,!=5.4.*,!=5.5.0,>=4.56.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (4.57.6)
+Requirement already satisfied: tokenizers>=0.21.1 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (0.22.2)
+Requirement already satisfied: protobuf!=6.30.*,!=6.31.*,!=6.32.*,!=6.33.0.*,!=6.33.1.*,!=6.33.2.*,!=6.33.3.*,!=6.33.4.*,>=5.29.6 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (7.34.1)
+Requirement already satisfied: fastapi>=0.115.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from fastapi[standard]>=0.115.0->vllm==0.19.1) (0.136.1)
+Requirement already satisfied: aiohttp>=3.13.3 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (3.13.5)
+Requirement already satisfied: openai>=2.0.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (2.36.0)
+Requirement already satisfied: pydantic>=2.12.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (2.13.4)
+Requirement already satisfied: prometheus_client>=0.18.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (0.25.0)
+Requirement already satisfied: pillow in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (12.2.0)
+Requirement already satisfied: prometheus-fastapi-instrumentator>=7.0.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (7.1.0)
+Requirement already satisfied: tiktoken>=0.6.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (0.12.0)
+Requirement already satisfied: lm-format-enforcer==0.11.3 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (0.11.3)
+Collecting llguidance<1.4.0,>=1.3.0 (from vllm==0.19.1)
+  Downloading llguidance-1.3.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (10 kB)
+Requirement already satisfied: outlines_core==0.2.11 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (0.2.11)
+Requirement already satisfied: diskcache==5.6.3 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (5.6.3)
+Requirement already satisfied: lark==1.2.2 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (1.2.2)
+Collecting xgrammar<1.0.0,>=0.1.32 (from vllm==0.19.1)
+  Downloading xgrammar-0.2.1-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+Requirement already satisfied: typing_extensions>=4.10 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (4.15.0)
+Requirement already satisfied: filelock>=3.16.1 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (3.25.2)
+Requirement already satisfied: partial-json-parser in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (0.2.1.1.post7)
+Requirement already satisfied: pyzmq>=25.0.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (27.1.0)
+Requirement already satisfied: msgspec in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (0.21.1)
+Requirement already satisfied: gguf>=0.17.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (0.19.0)
+Requirement already satisfied: mistral_common>=1.10.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from mistral_common[image]>=1.10.0->vllm==0.19.1) (1.11.2)
+Requirement already satisfied: opencv-python-headless>=4.13.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (4.13.0.92)
+Requirement already satisfied: pyyaml in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (6.0.3)
+Requirement already satisfied: einops in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (0.8.2)
+Collecting compressed-tensors==0.15.0.1 (from vllm==0.19.1)
+  Downloading compressed_tensors-0.15.0.1-py3-none-any.whl.metadata (4.7 kB)
+Collecting depyf==0.20.0 (from vllm==0.19.1)
+  Downloading depyf-0.20.0-py3-none-any.whl.metadata (7.3 kB)
+Requirement already satisfied: cloudpickle in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (3.1.2)
+Requirement already satisfied: watchfiles in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (1.1.1)
+Requirement already satisfied: python-json-logger in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (4.1.0)
+Requirement already satisfied: ninja in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (1.13.0)
+Requirement already satisfied: pybase64 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (1.4.3)
+Requirement already satisfied: cbor2 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (6.0.1)
+Collecting ijson (from vllm==0.19.1)
+  Downloading ijson-3.5.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (23 kB)
+Requirement already satisfied: setproctitle in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (1.3.7)
+Requirement already satisfied: openai-harmony>=0.0.3 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (0.0.8)
+Collecting anthropic>=0.71.0 (from vllm==0.19.1)
+  Downloading anthropic-0.102.0-py3-none-any.whl.metadata (3.2 kB)
+Collecting model-hosting-container-standards<1.0.0,>=0.1.13 (from vllm==0.19.1)
+  Downloading model_hosting_container_standards-0.1.15-py3-none-any.whl.metadata (24 kB)
+Collecting mcp (from vllm==0.19.1)
+  Downloading mcp-1.27.1-py3-none-any.whl.metadata (8.2 kB)
+Collecting opentelemetry-sdk>=1.27.0 (from vllm==0.19.1)
+  Downloading opentelemetry_sdk-1.41.1-py3-none-any.whl.metadata (1.7 kB)
+Collecting opentelemetry-api>=1.27.0 (from vllm==0.19.1)
+  Downloading opentelemetry_api-1.41.1-py3-none-any.whl.metadata (1.5 kB)
+Collecting opentelemetry-exporter-otlp>=1.27.0 (from vllm==0.19.1)
+  Downloading opentelemetry_exporter_otlp-1.41.1-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-semantic-conventions-ai>=0.4.1 (from vllm==0.19.1)
+  Downloading opentelemetry_semantic_conventions_ai-0.5.1-py3-none-any.whl.metadata (997 bytes)
+Requirement already satisfied: numba==0.61.2 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from vllm==0.19.1) (0.61.2)
+Collecting torch==2.10.0 (from vllm==0.19.1)
+  Downloading torch-2.10.0-3-cp310-cp310-manylinux_2_28_x86_64.whl.metadata (31 kB)
+Collecting torchaudio==2.10.0 (from vllm==0.19.1)
+  Downloading torchaudio-2.10.0-cp310-cp310-manylinux_2_28_x86_64.whl.metadata (6.9 kB)
+Collecting torchvision==0.25.0 (from vllm==0.19.1)
+  Downloading torchvision-0.25.0-cp310-cp310-manylinux_2_28_x86_64.whl.metadata (5.4 kB)
+Collecting flashinfer-python==0.6.6 (from vllm==0.19.1)
+  Downloading flashinfer_python-0.6.6-py3-none-any.whl.metadata (11 kB)
+Collecting flashinfer-cubin==0.6.6 (from vllm==0.19.1)
+  Downloading flashinfer_cubin-0.6.6-py3-none-any.whl.metadata (1.3 kB)
+Collecting nvidia-cudnn-frontend<1.19.0,>=1.13.0 (from vllm==0.19.1)
+  Downloading nvidia_cudnn_frontend-1.18.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (4.4 kB)
+Collecting nvidia-cutlass-dsl>=4.4.0.dev1 (from vllm==0.19.1)
+  Downloading nvidia_cutlass_dsl-4.5.1-py3-none-any.whl.metadata (2.8 kB)
+Collecting quack-kernels>=0.2.7 (from vllm==0.19.1)
+  Downloading quack_kernels-0.4.1-py3-none-any.whl.metadata (640 bytes)
+Collecting loguru (from compressed-tensors==0.15.0.1->vllm==0.19.1)
+  Downloading loguru-0.7.3-py3-none-any.whl.metadata (22 kB)
+Requirement already satisfied: astor in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from depyf==0.20.0->vllm==0.19.1) (0.8.1)
+Requirement already satisfied: dill in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from depyf==0.20.0->vllm==0.19.1) (0.4.1)
+Collecting apache-tvm-ffi!=0.1.8,!=0.1.8.post0,<0.2,>=0.1.6 (from flashinfer-python==0.6.6->vllm==0.19.1)
+  Downloading apache_tvm_ffi-0.1.11-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (6.1 kB)
+Requirement already satisfied: click in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from flashinfer-python==0.6.6->vllm==0.19.1) (8.3.3)
+Collecting nvidia-ml-py (from flashinfer-python==0.6.6->vllm==0.19.1)
+  Using cached nvidia_ml_py-13.595.45-py3-none-any.whl.metadata (9.7 kB)
+Requirement already satisfied: packaging>=24.2 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from flashinfer-python==0.6.6->vllm==0.19.1) (26.2)
+Collecting tabulate (from flashinfer-python==0.6.6->vllm==0.19.1)
+  Using cached tabulate-0.10.0-py3-none-any.whl.metadata (40 kB)
+Requirement already satisfied: interegular>=0.3.2 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from lm-format-enforcer==0.11.3->vllm==0.19.1) (0.3.3)
+Requirement already satisfied: llvmlite<0.45,>=0.44.0dev0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from numba==0.61.2->vllm==0.19.1) (0.44.0)
+Requirement already satisfied: sympy>=1.13.3 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from torch==2.10.0->vllm==0.19.1) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from torch==2.10.0->vllm==0.19.1) (3.4.2)
+Requirement already satisfied: jinja2 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from torch==2.10.0->vllm==0.19.1) (3.1.6)
+Requirement already satisfied: fsspec>=0.8.5 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from torch==2.10.0->vllm==0.19.1) (2026.2.0)
+Collecting cuda-bindings==12.9.4 (from torch==2.10.0->vllm==0.19.1)
+  Downloading cuda_bindings-12.9.4-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (2.6 kB)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.8.93 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from torch==2.10.0->vllm==0.19.1) (12.8.93)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.8.90 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from torch==2.10.0->vllm==0.19.1) (12.8.90)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.8.90 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from torch==2.10.0->vllm==0.19.1) (12.8.90)
+Requirement already satisfied: nvidia-cudnn-cu12==9.10.2.21 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from torch==2.10.0->vllm==0.19.1) (9.10.2.21)
+Requirement already satisfied: nvidia-cublas-cu12==12.8.4.1 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from torch==2.10.0->vllm==0.19.1) (12.8.4.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.3.3.83 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from torch==2.10.0->vllm==0.19.1) (11.3.3.83)
+Requirement already satisfied: nvidia-curand-cu12==10.3.9.90 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from torch==2.10.0->vllm==0.19.1) (10.3.9.90)
+Requirement already satisfied: nvidia-cusolver-cu12==11.7.3.90 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from torch==2.10.0->vllm==0.19.1) (11.7.3.90)
+Requirement already satisfied: nvidia-cusparse-cu12==12.5.8.93 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from torch==2.10.0->vllm==0.19.1) (12.5.8.93)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.7.1 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from torch==2.10.0->vllm==0.19.1) (0.7.1)
+Collecting nvidia-nccl-cu12==2.27.5 (from torch==2.10.0->vllm==0.19.1)
+  Downloading nvidia_nccl_cu12-2.27.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.0 kB)
+Collecting nvidia-nvshmem-cu12==3.4.5 (from torch==2.10.0->vllm==0.19.1)
+  Downloading nvidia_nvshmem_cu12-3.4.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.1 kB)
+Requirement already satisfied: nvidia-nvtx-cu12==12.8.90 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from torch==2.10.0->vllm==0.19.1) (12.8.90)
+Requirement already satisfied: nvidia-nvjitlink-cu12==12.8.93 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from torch==2.10.0->vllm==0.19.1) (12.8.93)
+Requirement already satisfied: nvidia-cufile-cu12==1.13.1.3 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from torch==2.10.0->vllm==0.19.1) (1.13.1.3)
+Collecting triton==3.6.0 (from torch==2.10.0->vllm==0.19.1)
+  Downloading triton-3.6.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (1.7 kB)
+Requirement already satisfied: cuda-pathfinder~=1.1 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from cuda-bindings==12.9.4->torch==2.10.0->vllm==0.19.1) (1.5.4)
+Requirement already satisfied: httpx in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from model-hosting-container-standards<1.0.0,>=0.1.13->vllm==0.19.1) (0.28.1)
+Collecting jmespath (from model-hosting-container-standards<1.0.0,>=0.1.13->vllm==0.19.1)
+  Using cached jmespath-1.1.0-py3-none-any.whl.metadata (7.6 kB)
+Requirement already satisfied: setuptools in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from model-hosting-container-standards<1.0.0,>=0.1.13->vllm==0.19.1) (82.0.1)
+Requirement already satisfied: starlette>=0.49.1 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from model-hosting-container-standards<1.0.0,>=0.1.13->vllm==0.19.1) (0.52.1)
+Collecting supervisor>=4.2.0 (from model-hosting-container-standards<1.0.0,>=0.1.13->vllm==0.19.1)
+  Downloading supervisor-4.3.0-py2.py3-none-any.whl.metadata (87 kB)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from aiohttp>=3.13.3->vllm==0.19.1) (2.6.1)
+Requirement already satisfied: aiosignal>=1.4.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from aiohttp>=3.13.3->vllm==0.19.1) (1.4.0)
+Requirement already satisfied: async-timeout<6.0,>=4.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from aiohttp>=3.13.3->vllm==0.19.1) (5.0.1)
+Requirement already satisfied: attrs>=17.3.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from aiohttp>=3.13.3->vllm==0.19.1) (26.1.0)
+Requirement already satisfied: frozenlist>=1.1.1 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from aiohttp>=3.13.3->vllm==0.19.1) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from aiohttp>=3.13.3->vllm==0.19.1) (6.7.1)
+Requirement already satisfied: propcache>=0.2.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from aiohttp>=3.13.3->vllm==0.19.1) (0.5.2)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from aiohttp>=3.13.3->vllm==0.19.1) (1.23.0)
+Requirement already satisfied: idna>=2.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from yarl<2.0,>=1.17.0->aiohttp>=3.13.3->vllm==0.19.1) (3.14)
+Requirement already satisfied: anyio<5,>=3.5.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from anthropic>=0.71.0->vllm==0.19.1) (4.13.0)
+Requirement already satisfied: distro<2,>=1.7.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from anthropic>=0.71.0->vllm==0.19.1) (1.9.0)
+Collecting docstring-parser<1,>=0.15 (from anthropic>=0.71.0->vllm==0.19.1)
+  Downloading docstring_parser-0.18.0-py3-none-any.whl.metadata (3.5 kB)
+Requirement already satisfied: jiter<1,>=0.4.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from anthropic>=0.71.0->vllm==0.19.1) (0.14.0)
+Requirement already satisfied: sniffio in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from anthropic>=0.71.0->vllm==0.19.1) (1.3.1)
+Requirement already satisfied: exceptiongroup>=1.0.2 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from anyio<5,>=3.5.0->anthropic>=0.71.0->vllm==0.19.1) (1.3.1)
+Requirement already satisfied: certifi in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from httpx->model-hosting-container-standards<1.0.0,>=0.1.13->vllm==0.19.1) (2026.4.22)
+Requirement already satisfied: httpcore==1.* in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from httpx->model-hosting-container-standards<1.0.0,>=0.1.13->vllm==0.19.1) (1.0.9)
+Requirement already satisfied: h11>=0.16 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from httpcore==1.*->httpx->model-hosting-container-standards<1.0.0,>=0.1.13->vllm==0.19.1) (0.16.0)
+Requirement already satisfied: annotated-types>=0.6.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from pydantic>=2.12.0->vllm==0.19.1) (0.7.0)
+Requirement already satisfied: pydantic-core==2.46.4 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from pydantic>=2.12.0->vllm==0.19.1) (2.46.4)
+Requirement already satisfied: typing-inspection>=0.4.2 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from pydantic>=2.12.0->vllm==0.19.1) (0.4.2)
+Requirement already satisfied: annotated-doc>=0.0.2 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from fastapi>=0.115.0->fastapi[standard]>=0.115.0->vllm==0.19.1) (0.0.4)
+Requirement already satisfied: fastapi-cli>=0.0.8 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.19.1) (0.0.24)
+Requirement already satisfied: fastar>=0.9.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from fastapi[standard]>=0.115.0->vllm==0.19.1) (0.11.0)
+Requirement already satisfied: python-multipart>=0.0.18 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from fastapi[standard]>=0.115.0->vllm==0.19.1) (0.0.28)
+Requirement already satisfied: email-validator>=2.0.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from fastapi[standard]>=0.115.0->vllm==0.19.1) (2.3.0)
+Requirement already satisfied: uvicorn>=0.12.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from uvicorn[standard]>=0.12.0; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.19.1) (0.46.0)
+Requirement already satisfied: pydantic-settings>=2.0.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from fastapi[standard]>=0.115.0->vllm==0.19.1) (2.14.1)
+Requirement already satisfied: pydantic-extra-types>=2.0.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from fastapi[standard]>=0.115.0->vllm==0.19.1) (2.11.1)
+Requirement already satisfied: dnspython>=2.0.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from email-validator>=2.0.0->fastapi[standard]>=0.115.0->vllm==0.19.1) (2.8.0)
+Requirement already satisfied: typer>=0.16.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.19.1) (0.25.1)
+Requirement already satisfied: rich-toolkit>=0.14.8 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.19.1) (0.19.7)
+Requirement already satisfied: tomli>=2.0.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.19.1) (2.4.1)
+Requirement already satisfied: fastapi-cloud-cli>=0.1.1 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.19.1) (0.17.1)
+Requirement already satisfied: rignore>=0.5.1 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from fastapi-cloud-cli>=0.1.1->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.19.1) (0.7.6)
+Requirement already satisfied: sentry-sdk>=2.20.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from fastapi-cloud-cli>=0.1.1->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.19.1) (2.59.0)
+Requirement already satisfied: MarkupSafe>=2.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from jinja2->torch==2.10.0->vllm==0.19.1) (3.0.3)
+Requirement already satisfied: jsonschema>=4.21.1 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from mistral_common>=1.10.0->mistral_common[image]>=1.10.0->vllm==0.19.1) (4.26.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from jsonschema>=4.21.1->mistral_common>=1.10.0->mistral_common[image]>=1.10.0->vllm==0.19.1) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from jsonschema>=4.21.1->mistral_common>=1.10.0->mistral_common[image]>=1.10.0->vllm==0.19.1) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from jsonschema>=4.21.1->mistral_common>=1.10.0->mistral_common[image]>=1.10.0->vllm==0.19.1) (0.30.0)
+Collecting nvidia-cutlass-dsl-libs-base==4.5.1 (from nvidia-cutlass-dsl>=4.4.0.dev1->vllm==0.19.1)
+  Downloading nvidia_cutlass_dsl_libs_base-4.5.1-cp310-cp310-manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Requirement already satisfied: cuda-python>=12.8 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from nvidia-cutlass-dsl-libs-base==4.5.1->nvidia-cutlass-dsl>=4.4.0.dev1->vllm==0.19.1) (13.2.0)
+INFO: pip is looking at multiple versions of cuda-python to determine which version is compatible with other requirements. This could take a while.
+Collecting cuda-python>=12.8 (from nvidia-cutlass-dsl-libs-base==4.5.1->nvidia-cutlass-dsl>=4.4.0.dev1->vllm==0.19.1)
+  Downloading cuda_python-13.1.1-py3-none-any.whl.metadata (6.2 kB)
+  Downloading cuda_python-13.1.0-py3-none-any.whl.metadata (4.8 kB)
+  Downloading cuda_python-13.0.3-py3-none-any.whl.metadata (4.7 kB)
+  Downloading cuda_python-13.0.2-py3-none-any.whl.metadata (4.7 kB)
+  Downloading cuda_python-13.0.1-py3-none-any.whl.metadata (4.7 kB)
+  Downloading cuda_python-13.0.0-py3-none-any.whl.metadata (4.7 kB)
+  Downloading cuda_python-12.9.6-py3-none-any.whl.metadata (4.7 kB)
+INFO: pip is still looking at multiple versions of cuda-python to determine which version is compatible with other requirements. This could take a while.
+  Downloading cuda_python-12.9.5-py3-none-any.whl.metadata (4.7 kB)
+  Downloading cuda_python-12.9.4-py3-none-any.whl.metadata (4.7 kB)
+Collecting importlib-metadata<8.8.0,>=6.0 (from opentelemetry-api>=1.27.0->vllm==0.19.1)
+  Downloading importlib_metadata-8.7.1-py3-none-any.whl.metadata (4.7 kB)
+Collecting zipp>=3.20 (from importlib-metadata<8.8.0,>=6.0->opentelemetry-api>=1.27.0->vllm==0.19.1)
+  Downloading zipp-3.23.1-py3-none-any.whl.metadata (3.6 kB)
+Collecting opentelemetry-exporter-otlp-proto-grpc==1.41.1 (from opentelemetry-exporter-otlp>=1.27.0->vllm==0.19.1)
+  Downloading opentelemetry_exporter_otlp_proto_grpc-1.41.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-exporter-otlp-proto-http==1.41.1 (from opentelemetry-exporter-otlp>=1.27.0->vllm==0.19.1)
+  Downloading opentelemetry_exporter_otlp_proto_http-1.41.1-py3-none-any.whl.metadata (2.5 kB)
+Collecting googleapis-common-protos~=1.57 (from opentelemetry-exporter-otlp-proto-grpc==1.41.1->opentelemetry-exporter-otlp>=1.27.0->vllm==0.19.1)
+  Downloading googleapis_common_protos-1.75.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting grpcio<2.0.0,>=1.63.2 (from opentelemetry-exporter-otlp-proto-grpc==1.41.1->opentelemetry-exporter-otlp>=1.27.0->vllm==0.19.1)
+  Downloading grpcio-1.80.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (3.8 kB)
+Collecting opentelemetry-exporter-otlp-proto-common==1.41.1 (from opentelemetry-exporter-otlp-proto-grpc==1.41.1->opentelemetry-exporter-otlp>=1.27.0->vllm==0.19.1)
+  Downloading opentelemetry_exporter_otlp_proto_common-1.41.1-py3-none-any.whl.metadata (1.9 kB)
+Collecting opentelemetry-proto==1.41.1 (from opentelemetry-exporter-otlp-proto-grpc==1.41.1->opentelemetry-exporter-otlp>=1.27.0->vllm==0.19.1)
+  Downloading opentelemetry_proto-1.41.1-py3-none-any.whl.metadata (2.4 kB)
+Collecting protobuf!=6.30.*,!=6.31.*,!=6.32.*,!=6.33.0.*,!=6.33.1.*,!=6.33.2.*,!=6.33.3.*,!=6.33.4.*,>=5.29.6 (from vllm==0.19.1)
+  Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+Collecting opentelemetry-semantic-conventions==0.62b1 (from opentelemetry-sdk>=1.27.0->vllm==0.19.1)
+  Downloading opentelemetry_semantic_conventions-0.62b1-py3-none-any.whl.metadata (2.5 kB)
+Requirement already satisfied: charset_normalizer<4,>=2 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from requests>=2.26.0->vllm==0.19.1) (3.4.7)
+Requirement already satisfied: urllib3<3,>=1.26 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from requests>=2.26.0->vllm==0.19.1) (2.7.0)
+Requirement already satisfied: pycountry>=23 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from pydantic-extra-types[pycountry]>=2.10.5->mistral_common>=1.10.0->mistral_common[image]>=1.10.0->vllm==0.19.1) (26.2.16)
+Requirement already satisfied: python-dotenv>=0.21.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from pydantic-settings>=2.0.0->fastapi[standard]>=0.115.0->vllm==0.19.1) (1.2.2)
+Collecting torch-c-dlpack-ext (from quack-kernels>=0.2.7->vllm==0.19.1)
+  Downloading torch_c_dlpack_ext-0.1.5-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (14 kB)
+Requirement already satisfied: rich>=13.7.1 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from rich-toolkit>=0.14.8->fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.19.1) (15.0.0)
+Requirement already satisfied: markdown-it-py>=2.2.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from rich>=13.7.1->rich-toolkit>=0.14.8->fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.19.1) (4.2.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from rich>=13.7.1->rich-toolkit>=0.14.8->fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.19.1) (2.20.0)
+Requirement already satisfied: mdurl~=0.1 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from markdown-it-py>=2.2.0->rich>=13.7.1->rich-toolkit>=0.14.8->fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.19.1) (0.1.2)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from sympy>=1.13.3->torch==2.10.0->vllm==0.19.1) (1.3.0)
+Requirement already satisfied: huggingface-hub<2.0,>=0.16.4 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from tokenizers>=0.21.1->vllm==0.19.1) (0.36.2)
+Requirement already satisfied: hf-xet<2.0.0,>=1.1.3 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from huggingface-hub<2.0,>=0.16.4->tokenizers>=0.21.1->vllm==0.19.1) (1.5.0)
+Requirement already satisfied: safetensors>=0.4.3 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from transformers!=5.0.*,!=5.1.*,!=5.2.*,!=5.3.*,!=5.4.*,!=5.5.0,>=4.56.0->vllm==0.19.1) (0.7.0)
+Requirement already satisfied: shellingham>=1.3.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from typer>=0.16.0->fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.19.1) (1.5.4)
+Requirement already satisfied: httptools>=0.6.3 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from uvicorn[standard]>=0.12.0; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.19.1) (0.7.1)
+Requirement already satisfied: uvloop>=0.15.1 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from uvicorn[standard]>=0.12.0; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.19.1) (0.22.1)
+Requirement already satisfied: websockets>=10.4 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from uvicorn[standard]>=0.12.0; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.19.1) (16.0)
+Collecting httpx-sse>=0.4 (from mcp->vllm==0.19.1)
+  Downloading httpx_sse-0.4.3-py3-none-any.whl.metadata (9.7 kB)
+Collecting pyjwt>=2.10.1 (from pyjwt[crypto]>=2.10.1->mcp->vllm==0.19.1)
+  Downloading pyjwt-2.12.1-py3-none-any.whl.metadata (4.1 kB)
+Collecting sse-starlette>=1.6.1 (from mcp->vllm==0.19.1)
+  Downloading sse_starlette-3.4.4-py3-none-any.whl.metadata (15 kB)
+Collecting cryptography>=3.4.0 (from pyjwt[crypto]>=2.10.1->mcp->vllm==0.19.1)
+  Downloading cryptography-48.0.0-cp39-abi3-manylinux_2_34_x86_64.whl.metadata (4.3 kB)
+Requirement already satisfied: cffi>=2.0.0 in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from cryptography>=3.4.0->pyjwt[crypto]>=2.10.1->mcp->vllm==0.19.1) (2.0.0)
+Requirement already satisfied: pycparser in ./llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages (from cffi>=2.0.0->cryptography>=3.4.0->pyjwt[crypto]>=2.10.1->mcp->vllm==0.19.1) (3.0)
+Downloading vllm-0.19.1-cp38-abi3-manylinux_2_31_x86_64.whl (433.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 433.1/433.1 MB 137.5 MB/s  0:00:02
+Downloading compressed_tensors-0.15.0.1-py3-none-any.whl (194 kB)
+Downloading depyf-0.20.0-py3-none-any.whl (39 kB)
+Downloading flashinfer_cubin-0.6.6-py3-none-any.whl (267.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 267.7/267.7 MB 142.4 MB/s  0:00:01
+Downloading flashinfer_python-0.6.6-py3-none-any.whl (7.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.8/7.8 MB 22.7 MB/s  0:00:00
+Downloading torch-2.10.0-3-cp310-cp310-manylinux_2_28_x86_64.whl (915.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 915.5/915.5 MB 110.1 MB/s  0:00:04
+Downloading cuda_bindings-12.9.4-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.1/12.1 MB 157.1 MB/s  0:00:00
+Downloading nvidia_nccl_cu12-2.27.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (322.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 322.3/322.3 MB 191.3 MB/s  0:00:01
+Downloading nvidia_nvshmem_cu12-3.4.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (139.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 139.1/139.1 MB 223.0 MB/s  0:00:00
+Downloading torchaudio-2.10.0-cp310-cp310-manylinux_2_28_x86_64.whl (1.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 78.7 MB/s  0:00:00
+Downloading torchvision-0.25.0-cp310-cp310-manylinux_2_28_x86_64.whl (8.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.1/8.1 MB 140.6 MB/s  0:00:00
+Downloading triton-3.6.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (188.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 188.1/188.1 MB 226.1 MB/s  0:00:00
+Downloading apache_tvm_ffi-0.1.11-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (2.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.8/2.8 MB 83.5 MB/s  0:00:00
+Downloading llguidance-1.3.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 70.1 MB/s  0:00:00
+Downloading model_hosting_container_standards-0.1.15-py3-none-any.whl (125 kB)
+Downloading nvidia_cudnn_frontend-1.18.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (2.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 75.9 MB/s  0:00:00
+Downloading xgrammar-0.2.1-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (44.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.7/44.7 MB 208.7 MB/s  0:00:00
+Downloading anthropic-0.102.0-py3-none-any.whl (763 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 763.1/763.1 kB 34.7 MB/s  0:00:00
+Downloading docstring_parser-0.18.0-py3-none-any.whl (22 kB)
+Downloading nvidia_cutlass_dsl-4.5.1-py3-none-any.whl (10 kB)
+Downloading nvidia_cutlass_dsl_libs_base-4.5.1-cp310-cp310-manylinux_2_28_x86_64.whl (74.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 74.5/74.5 MB 159.6 MB/s  0:00:00
+Downloading cuda_python-12.9.4-py3-none-any.whl (7.6 kB)
+Downloading opentelemetry_api-1.41.1-py3-none-any.whl (69 kB)
+Downloading importlib_metadata-8.7.1-py3-none-any.whl (27 kB)
+Downloading opentelemetry_exporter_otlp-1.41.1-py3-none-any.whl (7.0 kB)
+Downloading opentelemetry_exporter_otlp_proto_grpc-1.41.1-py3-none-any.whl (20 kB)
+Downloading opentelemetry_exporter_otlp_proto_common-1.41.1-py3-none-any.whl (18 kB)
+Downloading opentelemetry_exporter_otlp_proto_http-1.41.1-py3-none-any.whl (22 kB)
+Downloading opentelemetry_proto-1.41.1-py3-none-any.whl (72 kB)
+Downloading googleapis_common_protos-1.75.0-py3-none-any.whl (300 kB)
+Downloading grpcio-1.80.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (6.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.8/6.8 MB 109.5 MB/s  0:00:00
+Downloading opentelemetry_sdk-1.41.1-py3-none-any.whl (180 kB)
+Downloading opentelemetry_semantic_conventions-0.62b1-py3-none-any.whl (231 kB)
+Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+Downloading opentelemetry_semantic_conventions_ai-0.5.1-py3-none-any.whl (11 kB)
+Downloading quack_kernels-0.4.1-py3-none-any.whl (260 kB)
+Downloading supervisor-4.3.0-py2.py3-none-any.whl (320 kB)
+Downloading zipp-3.23.1-py3-none-any.whl (10 kB)
+Downloading ijson-3.5.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (130 kB)
+Using cached jmespath-1.1.0-py3-none-any.whl (20 kB)
+Downloading loguru-0.7.3-py3-none-any.whl (61 kB)
+Downloading mcp-1.27.1-py3-none-any.whl (216 kB)
+Downloading httpx_sse-0.4.3-py3-none-any.whl (9.0 kB)
+Downloading pyjwt-2.12.1-py3-none-any.whl (29 kB)
+Downloading cryptography-48.0.0-cp39-abi3-manylinux_2_34_x86_64.whl (4.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 91.5 MB/s  0:00:00
+Downloading sse_starlette-3.4.4-py3-none-any.whl (16 kB)
+Using cached nvidia_ml_py-13.595.45-py3-none-any.whl (51 kB)
+Using cached tabulate-0.10.0-py3-none-any.whl (39 kB)
+Downloading torch_c_dlpack_ext-0.1.5-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (879 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 879.5/879.5 kB 43.3 MB/s  0:00:00
+Installing collected packages: supervisor, nvidia-ml-py, zipp, triton, tabulate, pyjwt, protobuf, nvidia-nvshmem-cu12, nvidia-nccl-cu12, nvidia-cudnn-frontend, loguru, llguidance, jmespath, ijson, httpx-sse, grpcio, flashinfer-cubin, docstring-parser, depyf, cuda-bindings, apache-tvm-ffi, opentelemetry-proto, importlib-metadata, googleapis-common-protos, cuda-python, cryptography, torch, opentelemetry-exporter-otlp-proto-common, opentelemetry-api, nvidia-cutlass-dsl-libs-base, torchvision, torchaudio, torch-c-dlpack-ext, sse-starlette, opentelemetry-semantic-conventions, nvidia-cutlass-dsl, anthropic, xgrammar, quack-kernels, opentelemetry-sdk, model-hosting-container-standards, mcp, flashinfer-python, compressed-tensors, opentelemetry-semantic-conventions-ai, opentelemetry-exporter-otlp-proto-http, opentelemetry-exporter-otlp-proto-grpc, opentelemetry-exporter-otlp, vllm
+  Attempting uninstall: triton
+    Found existing installation: triton 3.4.0
+    Uninstalling triton-3.4.0:
+      Successfully uninstalled triton-3.4.0
+  Attempting uninstall: protobuf
+    Found existing installation: protobuf 7.34.1
+    Uninstalling protobuf-7.34.1:
+      Successfully uninstalled protobuf-7.34.1
+  Attempting uninstall: nvidia-nccl-cu12
+    Found existing installation: nvidia-nccl-cu12 2.27.3
+    Uninstalling nvidia-nccl-cu12-2.27.3:
+      Successfully uninstalled nvidia-nccl-cu12-2.27.3
+  Attempting uninstall: llguidance
+    Found existing installation: llguidance 0.7.30
+    Uninstalling llguidance-0.7.30:
+      Successfully uninstalled llguidance-0.7.30
+  Attempting uninstall: depyf
+    Found existing installation: depyf 0.19.0
+    Uninstalling depyf-0.19.0:
+      Successfully uninstalled depyf-0.19.0
+  Attempting uninstall: cuda-bindings
+    Found existing installation: cuda-bindings 13.2.0
+    Uninstalling cuda-bindings-13.2.0:
+      Successfully uninstalled cuda-bindings-13.2.0
+  Attempting uninstall: cuda-python
+    Found existing installation: cuda-python 13.2.0
+    Uninstalling cuda-python-13.2.0:
+      Successfully uninstalled cuda-python-13.2.0
+  Attempting uninstall: torch
+    Found existing installation: torch 2.8.0
+    Uninstalling torch-2.8.0:
+      Successfully uninstalled torch-2.8.0
+  Attempting uninstall: torchvision
+    Found existing installation: torchvision 0.23.0
+    Uninstalling torchvision-0.23.0:
+      Successfully uninstalled torchvision-0.23.0
+  Attempting uninstall: torchaudio
+    Found existing installation: torchaudio 2.8.0
+    Uninstalling torchaudio-2.8.0:
+      Successfully uninstalled torchaudio-2.8.0
+  Attempting uninstall: xgrammar
+    Found existing installation: xgrammar 0.1.23
+    Uninstalling xgrammar-0.1.23:
+      Successfully uninstalled xgrammar-0.1.23
+  Attempting uninstall: compressed-tensors
+    Found existing installation: compressed-tensors 0.11.0
+    Uninstalling compressed-tensors-0.11.0:
+      Successfully uninstalled compressed-tensors-0.11.0
+  Attempting uninstall: vllm
+    Found existing installation: vllm 0.10.2
+    Uninstalling vllm-0.10.2:
+      Successfully uninstalled vllm-0.10.2
+
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+xformers 0.0.32.post1 requires torch==2.8.0, but you have torch 2.10.0 which is incompatible.
+Successfully installed anthropic-0.102.0 apache-tvm-ffi-0.1.11 compressed-tensors-0.15.0.1 cryptography-48.0.0 cuda-bindings-12.9.4 cuda-python-12.9.4 depyf-0.20.0 docstring-parser-0.18.0 flashinfer-cubin-0.6.6 flashinfer-python-0.6.6 googleapis-common-protos-1.75.0 grpcio-1.80.0 httpx-sse-0.4.3 ijson-3.5.0 importlib-metadata-8.7.1 jmespath-1.1.0 llguidance-1.3.0 loguru-0.7.3 mcp-1.27.1 model-hosting-container-standards-0.1.15 nvidia-cudnn-frontend-1.18.0 nvidia-cutlass-dsl-4.5.1 nvidia-cutlass-dsl-libs-base-4.5.1 nvidia-ml-py-13.595.45 nvidia-nccl-cu12-2.27.5 nvidia-nvshmem-cu12-3.4.5 opentelemetry-api-1.41.1 opentelemetry-exporter-otlp-1.41.1 opentelemetry-exporter-otlp-proto-common-1.41.1 opentelemetry-exporter-otlp-proto-grpc-1.41.1 opentelemetry-exporter-otlp-proto-http-1.41.1 opentelemetry-proto-1.41.1 opentelemetry-sdk-1.41.1 opentelemetry-semantic-conventions-0.62b1 opentelemetry-semantic-conventions-ai-0.5.1 protobuf-6.33.6 pyjwt-2.12.1 quack-kernels-0.4.1 sse-starlette-3.4.4 supervisor-4.3.0 tabulate-0.10.0 torch-2.10.0 torch-c-dlpack-ext-0.1.5 torchaudio-2.10.0 torchvision-0.25.0 triton-3.6.0 vllm-0.19.1 xgrammar-0.2.1 zipp-3.23.1

@@ -1,0 +1,46 @@
+INFO 05-18 05:11:58 [__init__.py:216] Automatically detected platform cuda.
+Device: NVIDIA H100 80GB HBM3  SMs: 132
+
+=== Group 1: FA3 prefill (Mixtral GQA) ===
+[prefill mixtral-8x7b S=  128] med=0.065ms      2.1 TFLOPS  I=   51.2 FLOP/B  bound=memory  util=  1.2%
+[prefill mixtral-8x7b S=  256] med=0.065ms      8.3 TFLOPS  I=  102.4 FLOP/B  bound=memory  util=  2.4%
+[prefill mixtral-8x7b S=  512] med=0.064ms     33.4 TFLOPS  I=  204.8 FLOP/B  bound=memory  util=  4.9%
+[prefill mixtral-8x7b S= 1024] med=0.071ms    120.4 TFLOPS  I=  409.6 FLOP/B  bound=compute  util= 12.2%
+[prefill mixtral-8x7b S= 2048] med=0.155ms    221.9 TFLOPS  I=  819.2 FLOP/B  bound=compute  util= 22.4%
+[prefill mixtral-8x7b S= 4096] med=0.456ms    301.2 TFLOPS  I= 1638.4 FLOP/B  bound=compute  util= 30.4%
+[prefill mixtral-8x7b S= 8192] med=1.665ms    330.3 TFLOPS  I= 3276.8 FLOP/B  bound=compute  util= 33.4%
+
+=== Group 2: FA3 decode (Mixtral GQA) ===
+[decode  mixtral-8x7b K=  512] med=0.029ms     73.1 GB/s  I=   3.97  bound=memory  util=  2.2%
+[decode  mixtral-8x7b K= 1024] med=0.029ms    146.4 GB/s  I=   3.98  bound=memory  util=  4.4%
+[decode  mixtral-8x7b K= 2048] med=0.029ms    293.5 GB/s  I=   3.99  bound=memory  util=  8.8%
+[decode  mixtral-8x7b K= 4096] med=0.032ms    519.6 GB/s  I=   4.00  bound=memory  util= 15.5%
+[decode  mixtral-8x7b K= 8192] med=0.035ms    970.9 GB/s  I=   4.00  bound=memory  util= 29.0%
+[decode  mixtral-8x7b K=16384] med=0.041ms   1652.4 GB/s  I=   4.00  bound=memory  util= 49.3%
+
+=== Group 3: vLLM fused_moe (Mixtral 8x7B) ===
+WARNING 05-18 05:12:00 [fused_moe.py:727] Using default MoE config. Performance might be sub-optimal! Config file not found at ['/home/exouser/llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages/vllm/model_executor/layers/fused_moe/configs/E=8,N=14336,device_name=NVIDIA_H100_80GB_HBM3.json']
+[moe     mixtral-8x7b T=   16] med=1.243ms      9.1 TFLOPS  I=   16.0  bound=memory  util= 16.9%
+[moe     mixtral-8x7b T=   32] med=1.246ms     18.1 TFLOPS  I=   32.0  bound=memory  util= 16.9%
+[moe     mixtral-8x7b T=   64] med=1.299ms     34.7 TFLOPS  I=   63.9  bound=memory  util= 16.2%
+[moe     mixtral-8x7b T=  128] med=1.354ms     66.6 TFLOPS  I=  127.6  bound=memory  util= 15.6%
+[moe     mixtral-8x7b T=  256] med=1.825ms     98.9 TFLOPS  I=  254.5  bound=memory  util= 11.6%
+[moe     mixtral-8x7b T=  512] med=2.142ms    168.4 TFLOPS  I=  506.0  bound=compute  util= 17.0%
+[moe     mixtral-8x7b T= 1024] med=3.885ms    185.7 TFLOPS  I= 1000.2  bound=compute  util= 18.8%
+[moe     mixtral-8x7b T= 2048] med=7.141ms    202.1 TFLOPS  I= 1954.9  bound=compute  util= 20.4%
+[moe     mixtral-8x7b T= 4096] med=13.854ms    208.3 TFLOPS  I= 3739.8  bound=compute  util= 21.1%
+[moe     mixtral-8x7b T= 8192] med=28.237ms    204.4 TFLOPS  I= 6881.3  bound=compute  util= 20.7%
+
+=== Group 4: vLLM fused_moe (Qwen3-30B-A3B) ===
+WARNING 05-18 05:12:15 [fused_moe.py:727] Using default MoE config. Performance might be sub-optimal! Config file not found at ['/home/exouser/llm_multiplexing_stage_2/.venv/lib/python3.10/site-packages/vllm/model_executor/layers/fused_moe/configs/E=128,N=768,device_name=NVIDIA_H100_80GB_HBM3.json']
+[moe     qwen3-30b-a3b T=   16] med=0.306ms      3.9 TFLOPS  I=   16.0  bound=memory  util=  7.4%
+[moe     qwen3-30b-a3b T=   32] med=0.378ms      6.4 TFLOPS  I=   31.9  bound=memory  util=  6.0%
+[moe     qwen3-30b-a3b T=   64] med=0.433ms     11.2 TFLOPS  I=   63.6  bound=memory  util=  5.2%
+[moe     qwen3-30b-a3b T=  128] med=0.447ms     21.6 TFLOPS  I=  126.2  bound=memory  util=  5.1%
+[moe     qwen3-30b-a3b T=  256] med=0.558ms     34.6 TFLOPS  I=  249.1  bound=memory  util=  4.1%
+[moe     qwen3-30b-a3b T=  512] med=0.654ms     59.1 TFLOPS  I=  485.1  bound=compute  util=  6.0%
+[moe     qwen3-30b-a3b T= 1024] med=0.748ms    103.4 TFLOPS  I=  921.6  bound=compute  util= 10.5%
+[moe     qwen3-30b-a3b T= 2048] med=0.986ms    156.8 TFLOPS  I= 1675.6  bound=compute  util= 15.8%
+[moe     qwen3-30b-a3b T= 4096] med=1.696ms    182.3 TFLOPS  I= 2835.7  bound=compute  util= 18.4%
+
+Done. CSVs written to /home/exouser/multiplexing_h100_cdtc/result/step1_baseline
