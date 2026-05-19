@@ -192,3 +192,110 @@ result/step2_microbench/
 - ⚠ SM-cycle util via NCU not available without root; documented.
 
 Ready for Step 2.2 (whatever comes next per the project plan).
+
+---
+
+## Step 2.1.5a: CD kernel FP16 HFMA2 + block_size sweep
+
+`kernel_pure_cd.cu` was rewritten in place from FP32 FFMA to FP16 HFMA2 to
+match the project's real CD-attention regime (attention softmax accumulates
+in FP16 after FP8 dequant). The TC kernel is unchanged (FP16 HMMA via
+`wmma::mma_sync`). Step 2.1's FP32 measurements remain in `isolated.csv`
+under `kernel_type='pure_cd'` for reference, but **the FP32 numbers
+should not be cited going forward** — they were a proxy that did not
+match the production path. FP16 numbers live under
+`kernel_type='pure_cd_fp16_block{128,512}'`.
+
+### SASS verification of FP16 kernel
+
+```
+HFMA2 count            : 65       (gate ≥50, main loop has 16 × 4 = 64)
+HFMA (single, non-MMA) : 0        (no scalar fallback)
+FFMA (FP32)            : 8        (only in __floats2half2_rn constant init, not main loop)
+HMMA / HGMMA / GMMA    : 0        ✅ no Tensor Core ops
+```
+
+A representative inner-loop slice (4 distinct accumulators R13, R15, R17, R19):
+```
+HFMA2.MMA R13, R4, R6, R13 ;
+HFMA2     R15, R7, R10, R15 ;
+HFMA2.MMA R17, R8, R11, R17 ;
+HFMA2     R19, R9, R12, R19 ;
+```
+All four chains survived optimization (the Step 2.1 CSE-folding pattern is
+defeated by distinct per-chain inits and separate per-chain global stores).
+Both `HFMA2` and `HFMA2.MMA` are FP16 packed-FMA encodings.
+
+### block_size sweep result (grid=132, n_iters=10000)
+
+CSV: [cd_block_size_sweep.csv](cd_block_size_sweep.csv)
+
+| block | warps/SM | warps/SMSP | regs/thr | max-active-warps/SM | TFLOPS | % peak (134) |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+|  128 |  4 | 1 | 22 | 64 | 52.5 | 39.3 % |
+|  256 |  8 | 2 | 22 | 64 | 65.3 | 48.8 % |
+|  512 | 16 | 4 | 22 | 64 | **73.4** | **54.8 %** |
+| 1024 | 32 | 8 | 22 | 64 | 73.9 | 55.2 % |
+
+**Hypothesis CONFIRMED (Case 1 of the verdict template):** warps-per-SMSP
+shortage drives the Step 2.1 47 % FP32 utilization (and the 39 % FP16
+utilization at the same block_size=128). Adding warps so the SMSP scheduler
+has something to dispatch during HFMA2 latency lifts throughput by +40 %
+(39 % → 55 %) until plateau at 4 warps/SMSP. See
+[cd_block_size_sweep_verdict.md](cd_block_size_sweep_verdict.md).
+
+Registers/thread stays at 22 across all block sizes — occupancy is *not*
+register-pressure limited; the 64-warp-per-SM hardware cap is reached
+naturally by block=512 with grid=132.
+
+### Recommendation for Step 2.2 / 2.3
+
+**Use `block_size = 512` for all CD-side runs going forward.**
+- Maximum CD throughput on this kernel (73 TFLOPS, 55 % peak).
+- Same regs/thread as block=128 (22) → register-file footprint per *thread*
+  is unchanged, so TC kernel headroom for SM-co-execution is preserved.
+- 16 warps/SM leaves 48 of 64 warp slots free per SM for the TC kernel
+  Step 2.3 will run alongside.
+
+### Updated isolated baseline (grid=132)
+
+| kernel_type | block | n_iters | latency µs | TFLOPS | % peak |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| pure_cd_fp16_block128 | 128 |  10 000 |   823.6 | 52.5 | 39.3 % |
+| pure_cd_fp16_block128 | 128 | 100 000 |  8188.0 | 52.8 | 39.5 % |
+| pure_cd_fp16_block512 | 512 |  10 000 |  2355.7 | 73.4 | **54.9 %** |
+| pure_cd_fp16_block512 | 512 | 100 000 | 23513.9 | 73.6 | **55.0 %** |
+
+n_iters scaling is consistent within ±0.3 ppt — stability is excellent at
+both block sizes; the noise floor we documented in Step 2.1 (sub-100 µs
+kernels) doesn't apply here since every CD config in this sweep is ≥ 800 µs.
+
+### Per-SM budget update for Step 2.3
+
+Updating the "per-SM throughput available for co-execution" table from
+Step 2.1's main summary:
+
+| path | per-SM TFLOPS (best block) | at grid=132 |
+| --- | ---: | ---: |
+| CD (FP16 HFMA2, block=512) | **0.557 TFLOPS / SM** | 73.4 TFLOPS |
+| TC (FP16 HMMA, block=128 unchanged) | 4.21 TFLOPS / SM | 556.0 TFLOPS |
+| Combined ceiling (if perfect SM-level overlap) | **4.77 TFLOPS / SM** | **629.4 TFLOPS** |
+
+The CD per-SM number is roughly 2.2× the Step 2.1 FP32 estimate (0.25 →
+0.557 TFLOPS/SM), reflecting both the FP16-vs-FP32 lane width and the
+block_size correction. This is the new comparison point for Step 2.3's
+concurrent-execution measurement.
+
+### Files added / updated in Step 2.1.5a
+
+```
+src/microbench/
+├── kernel_pure_cd.cu                 # MODIFIED — now FP16 HFMA2 + 4 chains
+└── bench_isolated.cu                 # MODIFIED — subcommands (block-sweep, rebaseline-cd-fp16)
+result/step2_microbench/
+├── isolated.csv                      # APPENDED — pure_cd_fp16_block{128,512} rows
+├── isolated.csv.step2_1              # NEW — Step 2.1 snapshot before append
+├── cd_block_size_sweep.csv           # NEW — 4-row block sweep
+├── cd_block_size_sweep_verdict.md    # NEW — Case 1 verdict + recommendation
+└── summary.md                        # this file (Step 2.1.5a section appended)
+```

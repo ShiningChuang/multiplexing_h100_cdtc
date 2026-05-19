@@ -1,0 +1,5 @@
+block_size,warps_per_block,warps_per_smsp,registers_per_thread,static_smem_bytes,max_resident_blocks_per_sm,max_active_warps_per_sm,grid_size,n_iters,latency_us_median,latency_us_p10,latency_us_p90,latency_us_min,latency_us_max,tflops_achieved,pct_of_peak
+128,4,1,22,0,16,64,132,10000,823.616,823.264,824.288,823.072,829.504,52.52,39.25
+256,8,2,22,0,8,64,132,10000,1324.128,1323.648,1324.672,1323.296,1329.760,65.33,48.83
+512,16,4,22,0,4,64,132,10000,2357.824,2357.408,2358.368,2357.120,2361.952,73.38,54.84
+1024,32,8,22,0,2,64,132,10000,4682.464,4682.016,4683.904,4681.792,4685.600,73.90,55.23
